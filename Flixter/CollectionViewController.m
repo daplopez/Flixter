@@ -1,45 +1,31 @@
 //
-//  MovieViewController.m
+//  CollectionViewController.m
 //  Flixter
 //
-//  Created by Daphne Lopez on 6/15/22.
+//  Created by Daphne Lopez on 6/17/22.
 //
 
-#import "MovieViewController.h"
-#import "MovieCell.h"
+#import "CollectionViewController.h"
+#import "PosterCollectionViewCell.h"
 #import "UIImageView+AFNetworking.h"
-#import "DetailsViewController.h"
 
-@interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
-
-// Create array property
+@interface CollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *movies;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
+
+
 @end
 
-@implementation MovieViewController
-
+@implementation CollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Do any additional setup after loading the view.
-    // TODO: start animating load state
-    [self.activityIndicator startAnimating];
-    // Table View
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    self.tableView.rowHeight = 170;
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
     
     [self fetchMovies];
-    
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
-    [self.tableView insertSubview:self.refreshControl atIndex:0];
-
-    
 }
 
 - (void)fetchMovies {
@@ -69,54 +55,46 @@
                self.movies = dataDictionary[@"results"];
                //NSLog(@"%@", dataDictionary);// log an object with the %@ formatter.
                // TODO: Reload your table view data
-               [self.tableView reloadData];
+               [self.collectionView reloadData];
                
            }
         
-        [self.refreshControl endRefreshing];
-        [self.activityIndicator stopAnimating];
        }];
     // send request now
     [task resume];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.movies.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Reusing cell
-    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
-    // Getting movie ans setting labels
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    PosterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PosterCollectionViewCell" forIndexPath:indexPath];
     NSDictionary *movie = self.movies[indexPath.row];
-    cell.titleLabel.text = movie[@"title"];
-    cell.synopsisLabel.text = movie[@"overview"];
-    
     // Getting poster image
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL =[NSURL URLWithString:fullPosterURLString];
-    cell.posterView.image = nil;
+    // set image to cell
     [cell.posterView setImageWithURL:posterURL];
-    
     return cell;
 }
 
-#pragma mark - Navigation
-
-//In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // save the index path to know what dictionary you need to pass
-    NSIndexPath *indexPath =[self.tableView indexPathForCell:sender];
-    // Get movie dictionary
-    NSDictionary * dataToPass = self.movies[indexPath.row];
-    // Get the new view controller using [segue destinationViewController].
-    DetailsViewController *detailsVC = [segue destinationViewController];
-    // Pass the selected object to the new view controller property.
-    detailsVC.movieInfo = dataToPass;
-
+// MARK: UICollectionViewDelegateFlowLayout methods
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    // Setting the poster size in collection view
+    return CGSizeMake(128, 165);
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

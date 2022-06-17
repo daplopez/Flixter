@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B956C70E105A72391670362 /* Pods_FlixterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF287DF0E946631450E8DDEC /* Pods_FlixterTests.framework */; };
 		1FB940DDEC6F51E21D36D4E6 /* Pods_Flixter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBFD7F75D316462DB146006D /* Pods_Flixter.framework */; };
+		8D14E892285D20740019D3D5 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D14E891285D20740019D3D5 /* CollectionViewController.m */; };
+		8D14E895285D20A30019D3D5 /* PosterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D14E894285D20A30019D3D5 /* PosterCollectionViewCell.m */; };
 		8D2A5DF4285A589D00ECDC88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2A5DF3285A589D00ECDC88 /* AppDelegate.m */; };
 		8D2A5DF7285A589D00ECDC88 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2A5DF6285A589D00ECDC88 /* SceneDelegate.m */; };
 		8D2A5DFA285A589D00ECDC88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2A5DF9285A589D00ECDC88 /* ViewController.m */; };
@@ -22,7 +24,6 @@
 		8D2A5E29285A92AE00ECDC88 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2A5E28285A92AE00ECDC88 /* MovieViewController.m */; };
 		8D7947DF285BB13100705854 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7947DE285BB13100705854 /* MovieCell.m */; };
 		8D7947E2285BC57300705854 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7947E1285BC57300705854 /* DetailsViewController.m */; };
-		8DA0493D285C3D3F00B4787F /* NetworkAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA0493C285C3D3F00B4787F /* NetworkAlertController.m */; };
 		8DC681D4285B981300F42A08 /* TitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC681D3285B981300F42A08 /* TitleTableViewCell.m */; };
 		D9B92221553C93ED7F8D4902 /* Pods_Flixter_FlixterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FADFB4A7818FC0CF5A2C57A /* Pods_Flixter_FlixterUITests.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,10 @@
 /* Begin PBXFileReference section */
 		6F9594F5BF26542263BEFFCD /* Pods-Flixter-FlixterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flixter-FlixterUITests.debug.xcconfig"; path = "Target Support Files/Pods-Flixter-FlixterUITests/Pods-Flixter-FlixterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FADFB4A7818FC0CF5A2C57A /* Pods_Flixter_FlixterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flixter_FlixterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D14E890285D20740019D3D5 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		8D14E891285D20740019D3D5 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		8D14E893285D20A30019D3D5 /* PosterCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PosterCollectionViewCell.h; sourceTree = "<group>"; };
+		8D14E894285D20A30019D3D5 /* PosterCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PosterCollectionViewCell.m; sourceTree = "<group>"; };
 		8D2A5DEF285A589D00ECDC88 /* Flixter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flixter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2A5DF2285A589D00ECDC88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D2A5DF3285A589D00ECDC88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,8 +75,6 @@
 		8D7947DE285BB13100705854 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		8D7947E0285BC57300705854 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		8D7947E1285BC57300705854 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
-		8DA0493B285C3D3F00B4787F /* NetworkAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkAlertController.h; sourceTree = "<group>"; };
-		8DA0493C285C3D3F00B4787F /* NetworkAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkAlertController.m; sourceTree = "<group>"; };
 		8DC681D2285B981300F42A08 /* TitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleTableViewCell.h; sourceTree = "<group>"; };
 		8DC681D3285B981300F42A08 /* TitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleTableViewCell.m; sourceTree = "<group>"; };
 		BE113363A9F1429E9AF8EC08 /* Pods-Flixter-FlixterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flixter-FlixterUITests.release.xcconfig"; path = "Target Support Files/Pods-Flixter-FlixterUITests/Pods-Flixter-FlixterUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,14 +169,16 @@
 				8D2A5DF8285A589D00ECDC88 /* ViewController.h */,
 				8D2A5DF9285A589D00ECDC88 /* ViewController.m */,
 				8D2A5DFB285A589D00ECDC88 /* Main.storyboard */,
+				8D14E893285D20A30019D3D5 /* PosterCollectionViewCell.h */,
+				8D14E894285D20A30019D3D5 /* PosterCollectionViewCell.m */,
+				8D14E890285D20740019D3D5 /* CollectionViewController.h */,
+				8D14E891285D20740019D3D5 /* CollectionViewController.m */,
 				8D7947E0285BC57300705854 /* DetailsViewController.h */,
 				8D7947E1285BC57300705854 /* DetailsViewController.m */,
 				8D7947DD285BB13100705854 /* MovieCell.h */,
 				8D7947DE285BB13100705854 /* MovieCell.m */,
 				8D2A5E27285A92AE00ECDC88 /* MovieViewController.h */,
 				8D2A5E28285A92AE00ECDC88 /* MovieViewController.m */,
-				8DA0493B285C3D3F00B4787F /* NetworkAlertController.h */,
-				8DA0493C285C3D3F00B4787F /* NetworkAlertController.m */,
 				8DC681D2285B981300F42A08 /* TitleTableViewCell.h */,
 				8DC681D3285B981300F42A08 /* TitleTableViewCell.m */,
 				8D2A5DFE285A589E00ECDC88 /* Assets.xcassets */,
@@ -440,14 +445,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC681D4285B981300F42A08 /* TitleTableViewCell.m in Sources */,
-				8DA0493D285C3D3F00B4787F /* NetworkAlertController.m in Sources */,
 				8D2A5DFA285A589D00ECDC88 /* ViewController.m in Sources */,
 				8D2A5E29285A92AE00ECDC88 /* MovieViewController.m in Sources */,
 				8D7947DF285BB13100705854 /* MovieCell.m in Sources */,
 				8D2A5DF4285A589D00ECDC88 /* AppDelegate.m in Sources */,
 				8D2A5E05285A589E00ECDC88 /* main.m in Sources */,
 				8D2A5DF7285A589D00ECDC88 /* SceneDelegate.m in Sources */,
+				8D14E895285D20A30019D3D5 /* PosterCollectionViewCell.m in Sources */,
 				8D7947E2285BC57300705854 /* DetailsViewController.m in Sources */,
+				8D14E892285D20740019D3D5 /* CollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
