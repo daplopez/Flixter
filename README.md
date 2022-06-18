@@ -40,17 +40,18 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/a/SJx2y4x' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/a/SJx2y4x' title='Video Walkthrough' width='320px' alt='Video Walkthrough' />
+/Users/daplopez/Downloads/ezgif.com-gif-maker (2).gif
 
 GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
 I encountered many challenges in the beginning as I was unfamiliar with the Objective C language
-and Xcode. However, I sonn became more familiar with them. I also faced challenges with segues
-and adding a formatting images. For example, it took me a while to figure out how to change the
+and Xcode. However, I soon became more familiar with them. I also faced challenges with segues
+and formatting images. For example, it took me a while to figure out how to change the
 collection view layout and in the 'Now Playing' tab, the poster images didn't end up exactly as I
-wanted them to.
+originally wanted them to.
 
 ## Credits
 
